@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Tenant;
+use App\Models\Report;
 use Livewire\Component;
 
 class EnterTenant extends Component
@@ -52,6 +53,8 @@ class EnterTenant extends Component
                 'name' => $this->tenantName,
                 'date_of_birth' => $this->dateOfBirth,
             ]);
+
+            Report::truncate();
 
             $tenant->reports()
                 ->create([
