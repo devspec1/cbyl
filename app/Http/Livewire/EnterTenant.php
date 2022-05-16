@@ -54,8 +54,6 @@ class EnterTenant extends Component
                 'date_of_birth' => $this->dateOfBirth,
             ]);
 
-            Report::truncate();
-
             $tenant->reports()
                 ->create([
                     'none_payment_of_rent' => $this->parseToBoolean($this->nonePaymentOfRent),
