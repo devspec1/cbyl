@@ -1,0 +1,1 @@
+<img alt="img" src="{{ asset('what-to-do.png') }}" class="w-16 h-16 rounded-full border-primary border-2 object-cover"/>
