@@ -15,87 +15,6 @@
     @endif
 
     @if ($step === 2)
-        <form class="flex flex-col grow justify-between w-full h-full py-28 px-10">
-            <h1 class="text-black font-bold font-heading text-[68px] leading-tight pb-[106px]">Particulars of {{ $this->tenantName }}</h1>
-            <div>
-                <div class="w-full flex flex-col md:flex-row justify-between mt-10">
-                    <div class="mb-6 w-full md:w-1/4">
-                        <label for="description"
-                            class="{{ $errors->has('description') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-heading font-semibold text-gray-900 dark:text-gray-300 {{ $errors->has('description') ? 'text-red-700' : '' }}">Description of
-                            individual</label>
-                        <textarea wire:model='description' rows="6" type="text" id="description"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-primary block w-full p-2.5 {{ $errors->has('description') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}"></textarea>
-                        @error('description')
-                            <x-error message="{{ $message }}"></x-error>
-                        @enderror
-                    </div>
-
-                    <div class="mb-0 md:mb-6 w-full md:w-1/4 flex flex-col">
-                        <div class="mb-6">
-                            <label for="age"
-                                class="{{ $errors->has('age') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-heading font-semibold text-gray-900 dark:text-gray-300 {{ $errors->has('age') ? 'text-red-700' : '' }}">Age</label>
-                            <input wire:model='age' type="number" id="age"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-primary {{ $errors->has('age') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}" required>
-                            @error('age')
-                                <x-error message="{{ $message }}"></x-error>
-                            @enderror
-                        </div>
-
-                        <div class="mb-6">
-                            <label for="dependants"
-                                class="{{ $errors->has('dependants') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Dependants</label>
-                            <input wire:model='dependants' type="number" id="dependants"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-primary {{ $errors->has('dependants') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}"
-                                required>
-                            @error('dependants')
-                                <x-error message="{{ $message }}"></x-error>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="mb-0 md:mb-6 w-full md:w-1/4 flex flex-col">
-                        <div class="mb-6">
-                            <label for="maretalStatus"
-                                class="{{ $errors->has('maretalStatus') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Marital
-                                Status</label>
-                            <select name="maretalStatus" wire:model='maretalStatus' id="maretalStatus"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-primary {{ $errors->has('maretalStatus') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}">
-                                <option value="">&nbsp;</option>
-                                <option value="1">Single</option>
-                                <option value="2">Married</option>
-                                <option value="3">Widowed</option>
-                                <option value="4">Divorced</option>
-                            </select>
-                            @error('maretalStatus')
-                                <x-error message="{{ $message }}"></x-error>
-                            @enderror
-                        </div>
-
-                        <div class="mb-6">
-                            <label for="areasOfProperty"
-                                class="{{ $errors->has('areasOfProperty') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Area of
-                                Property</label>
-                            <input wire:model='areasOfProperty' type="text" id="areasOfProperty"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text      -sm rounded-lg focus:ring-blue-500 focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-primary {{ $errors->has('areasOfProperty') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}"
-                                placeholder="" required>
-                            @error('areasOfProperty')
-                                <x-error message="{{ $message }}"></x-error>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end mt-10">
-                    <button type="button" wire:click='next'
-                        class="text-white flex justify-center items-center bg-primary hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-primary font-semibold rounded-lg text-[14px] w-[141px] h-[45px] px-5 py-2.5 text-center ">
-                        <span class="mr-3">Continue</span> <x-arrow-icon></x-arrow-icon>
-                    </button>
-                </div>
-            </div>
-        </form>
-    @endif
-
-    @if ($step === 3)
         <div class="flex flex-col grow justify-between w-full h-full py-28 px-10">
             <h1 class="text-black font-bold text-[68px] font-heading leading-tight pb-[106px]">
                 Reasons for adding {{ $this->tenantName }}
@@ -103,8 +22,7 @@
             <div class="w-full flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
                     <div class="flex flex-col mb-6">
-                        <label for="none_payment_of_rent_yes"
-                            class="{{ $errors->has('nonePaymentOfRent') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900">None Payment of Rent</label>
+                        <label for="none_payment_of_rent_yes" class="{{ $errors->has('nonePaymentOfRent') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900">None Payment of Rent</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/3">
                                 <input wire:model='nonePaymentOfRent' class="sr-only peer" type="radio" value="yes" name="none_payment_of_rent" id="none_payment_of_rent_yes">
@@ -153,33 +71,9 @@
 
                 <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
                     <div class="flex flex-col mb-6">
-                        <label for="drug_yes"
-                            class="{{ $errors->has('drugs') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Drugs</label>
-                        <div class="flex space-x-4">
-                            <div class="relative w-1/3">
-
-                                <input wire:model='drugs' class="sr-only peer" type="radio" value="yes" name="drugs" id="drug_yes">
-                                <label
-                                    class="text-[18px] w-[121px] h-[38px] flex justify-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('drugs') ? 'bg-red-50 border' : '' }}"
-                                    for="drug_yes" style="font-family: 'Raleway'; display: flex; align-items: center;">Yes</label>
-                            </div>
-
-                            <div class="relative w-1/3">
-                                <input wire:model='drugs' class="sr-only peer" type="radio" value="no" name="drugs" id="drug_no">
-                                <label
-                                    class="text-[18px] w-[121px] h-[38px] flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('drugs') ? 'bg-red-50 border' : '' }}"
-                                    for="drug_no" style="font-family: 'Raleway'; display: flex; align-items: center;">No</label>
-                            </div>
-                        </div>
-                        @error('drugs')
-                            <x-error message="{{ $message }}"></x-error>
-                        @enderror
-                    </div>
-
-                    <div class="flex flex-col mb-6">
                         <label for="damage_of_property_yes"
                             class="{{ $errors->has('damageToProperty') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Damage to
-                            Property</label>
+                            the Property</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/3">
 
@@ -200,16 +94,56 @@
                             <x-error message="{{ $message }}"></x-error>
                         @enderror
                     </div>
+                    
+                    <div class="flex flex-col mb-6">
+                        <label for="termsOfLeaseBroken_yes"
+                            class="{{ $errors->has('termsOfLeaseBroken') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Terms of Lease Broken</label>
+                        <div class="flex space-x-4">
+                            <div class="relative w-1/3">
+
+                                <input wire:model='termsOfLeaseBroken' class="sr-only peer" type="radio" value="yes" name="termsOfLeaseBroken" id="termsOfLeaseBroken_yes">
+                                <label
+                                    class="text-[18px] w-[121px] h-[38px] flex justify-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('termsOfLeaseBroken') ? 'bg-red-50 border' : '' }}"
+                                    for="termsOfLeaseBroken_yes" style="font-family: 'Raleway'; display: flex; align-items: center;">Yes</label>
+                            </div>
+
+                            <div class="relative w-1/3">
+                                <input wire:model='termsOfLeaseBroken' class="sr-only peer" type="radio" value="no" name="termsOfLeaseBroken" id="termsOfLeaseBroken_no">
+                                <label
+                                    class="text-[18px] w-[121px] h-[38px] flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('termsOfLeaseBroken') ? 'bg-red-50 border' : '' }}"
+                                    for="termsOfLeaseBroken_no" style="font-family: 'Raleway'; display: flex; align-items: center;">No</label>
+                            </div>
+                        </div>
+                        @error('termsOfLeaseBroken')
+                            <x-error message="{{ $message }}"></x-error>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="flex flex-col w-full md:w-[270px] mb-0 md:mb-6">
-                    <label for="other"
-                        class="{{ $errors->has('other1') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Other</label>
-                    <textarea wire:model='other1' rows="6" id="other" class="w-full border-gray-500 rounded-md {{ $errors->has('other1') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}"
-                        placeholder="Anything other comments you feel may be relevant"></textarea>
-                    @error('other1')
-                        <x-error message="{{ $message }}"></x-error>
-                    @enderror
+                <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
+                    <div class="flex flex-col mb-6">
+                        <label for="antiSocialBehaviour_yes"
+                            class="{{ $errors->has('antiSocialBehaviour') ? 'text-red-700' : '' }} block mb-2 text-[17px] font-semibold text-gray-900 dark:text-gray-300">Anti-Social Behaviour</label>
+                        <div class="flex space-x-4">
+                            <div class="relative w-1/3">
+
+                                <input wire:model='antiSocialBehaviour'  class="sr-only peer" type="radio" value="yes" name="antiSocialBehaviour" id="antiSocialBehaviour_yes">
+                                <label
+                                    class="text-[18px] w-[121px] h-[38px] flex justify-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('antiSocialBehaviour') ? 'bg-red-50 border' : '' }}"
+                                    for="antiSocialBehaviour_yes" style="font-family: 'Raleway'; display: flex; align-items: center;">Yes</label>
+                            </div>
+
+                            <div class="relative w-1/3">
+                                <input wire:model='antiSocialBehaviour' class="sr-only peer" type="radio" value="no" name="antiSocialBehaviour" id="antiSocialBehaviour_no">
+                                <label
+                                    class="text-[18px] w-[121px] h-[38px] flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('antiSocialBehaviour') ? 'bg-red-50 border' : '' }}"
+                                    for="antiSocialBehaviour_no" style="font-family: 'Raleway'; display: flex; align-items: center;">No</label>
+                            </div>
+                        </div>
+                        @error('antiSocialBehaviour')
+                            <x-error message="{{ $message }}"></x-error>
+                        @enderror
+                    </div>
                 </div>
             </div>
             <div class="flex justify-end mt-10">
@@ -221,7 +155,7 @@
         </div>
     @endif
 
-    @if ($step === 4)
+    @if ($step === 3)
         <div class="flex flex-col grow justify-between w-full h-full py-28 px-10"> 
             <h1 class="text-black font-bold text-[68px] leading-tight pb-[106px]">
                 Do any of the following apply to {{ $this->tenantName }}?
@@ -230,8 +164,7 @@
                 <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
                     <div class="flex flex-col mb-6">
                         <label for="no_boiler_for_a_period_of_time_yes"
-                            class="{{ $errors->has('noBoilerForAPeriodOfTime') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">No Boiler For A
-                            Period Of Time</label>
+                            class="{{ $errors->has('noBoilerForAPeriodOfTime') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">No Boiler For A Period Of Time</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/4">
 
@@ -255,8 +188,7 @@
 
                     <div class="flex flex-col mb-6">
                         <label for="damp_yes"
-                            class="{{ $errors->has('damp') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Damp
-                            (Extreme)</label>
+                            class="{{ $errors->has('damp') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Damp (Extreme)</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/4">
 
@@ -277,38 +209,12 @@
                             <x-error message="{{ $message }}"></x-error>
                         @enderror
                     </div>
-
-                    <div class="flex flex-col mb-6">
-                        <label for="behavior_recorded_as_good_yes"
-                            class="{{ $errors->has('behaviorRecordedAsGood') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Behaviour Recorded
-                            As Good</label>
-                        <div class="flex space-x-4">
-                            <div class="relative w-1/4">
-
-                                <input wire:model='behaviorRecordedAsGood' class="sr-only peer" type="radio" value="yes" name="behavior_recorded_as_good" id="behavior_recorded_as_good_yes">
-                                <label
-                                    class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('behaviorRecordedAsGood') ? 'bg-red-50 border' : '' }}"
-                                    for="behavior_recorded_as_good_yes">Yes</label>
-                            </div>
-
-                            <div class="relative w-1/4">
-                                <input wire:model='behaviorRecordedAsGood' class="sr-only peer" type="radio" value="no" name="behavior_recorded_as_good" id="behavior_recorded_as_good_no">
-                                <label
-                                    class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('behaviorRecordedAsGood') ? 'bg-red-50 border' : '' }}"
-                                    for="behavior_recorded_as_good_no">No</label>
-                            </div>
-                        </div>
-                        @error('behaviorRecordedAsGood')
-                            <x-error message="{{ $message }}"></x-error>
-                        @enderror
-                    </div>
                 </div>
 
                 <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
                     <div class="flex flex-col mb-6">
                         <label for="bathroom_of_plumbing_issues_yes"
-                            class="{{ $errors->has('bathroomOfPlumbingIssues') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Bathroom of
-                            Plumbing Issues</label>
+                            class="{{ $errors->has('bathroomOfPlumbingIssues') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Bathroom of Plumbing Issues</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/4">
 
@@ -332,8 +238,7 @@
 
                     <div class="flex flex-col mb-6">
                         <label for="kitchin_issues_yes"
-                            class="{{ $errors->has('kitchinIssues') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Kitchen
-                            Issues</label>
+                            class="{{ $errors->has('kitchinIssues') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Kitchen Issues</label>
                         <div class="flex space-x-4">
                             <div class="relative w-1/4">
 
@@ -356,14 +261,30 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col w-full md:w-[270px] mb-0 md:mb-6">
-                    <label for="other"
-                        class="{{ $errors->has('other2') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Other</label>
-                    <textarea wire:model='other2' rows="6" id="other" name="other" class="w-full border-gray-500 {{ $errors->has('other2') ? 'bg-red-50 border border-red-700 text-red-900 placeholder-red-700' : '' }}"
-                        placeholder="Anything other comments you feel may be relevant"></textarea>
-                    @error('other2')
-                        <x-error message="{{ $message }}"></x-error>
-                    @enderror
+                <div class="flex flex-col w-full md:w-1/3 mb-0 md:mb-6">
+                    <div class="flex flex-col mb-6">
+                        <label for="behavior_recorded_as_good_yes"
+                            class="{{ $errors->has('behaviorRecordedAsGood') ? 'text-red-700' : '' }} block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Behaviour Recorded As Good</label>
+                        <div class="flex space-x-4">
+                            <div class="relative w-1/4">
+
+                                <input wire:model='behaviorRecordedAsGood' class="sr-only peer" type="radio" value="yes" name="behavior_recorded_as_good" id="behavior_recorded_as_good_yes">
+                                <label
+                                    class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('behaviorRecordedAsGood') ? 'bg-red-50 border' : '' }}"
+                                    for="behavior_recorded_as_good_yes">Yes</label>
+                            </div>
+
+                            <div class="relative w-1/4">
+                                <input wire:model='behaviorRecordedAsGood' class="sr-only peer" type="radio" value="no" name="behavior_recorded_as_good" id="behavior_recorded_as_good_no">
+                                <label
+                                    class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-et-s peer-checked:text-white peer-checked:border-transparent {{ $errors->has('behaviorRecordedAsGood') ? 'bg-red-50 border' : '' }}"
+                                    for="behavior_recorded_as_good_no">No</label>
+                            </div>
+                        </div>
+                        @error('behaviorRecordedAsGood')
+                            <x-error message="{{ $message }}"></x-error>
+                        @enderror
+                    </div>
                 </div>
             </div>
             <div class="flex justify-end mt-10">
@@ -373,17 +294,42 @@
         </div>
     @endif
 
-    @if ($step === 5)
+    @if ($step === 4)
         <div class="flex flex-col grow justify-between w-full h-full py-20 px-20">
             <div class="w-full flex flex-col justify-center">
+                @if ($result === 1 || $result === 2)
                 <h1 class="text-black font-bold text-[68px] font-heading leading-tight pb-[87px]">
-                    Report sent!
+                    Report published!
                 </h1>
+                @endif
+                @if ($result === 3)
+                <h1 class="text-black font-bold text-[68px] font-heading leading-tight pb-[87px]">
+                    Report not published.
+                </h1>
+                @endif
 
+                @if ($result === 1)
                 <p class="text-[#707070] text-[25px] leading-tight my-12" style="font-family: 'Raleway'; display: flex; align-items: center;">
-                    Thanks for your submission, a member of our team will check it over and your report should be
-                    live and searchable within the next 24 hours.
+                    Thank you for submitting your report.<br><br>
+                    We’re pleased to say that it’s now available to search.<br><br>
+                    Your contribution is appreciated and helps good tenants and landlords alike.<br>
                 </p>
+                @endif
+
+                @if ($result === 2)
+                <p class="text-[#707070] text-[25px] leading-tight my-12" style="font-family: 'Raleway'; display: flex; align-items: center;">
+                    Thank you for submitting your report.<br><br>
+                    We’re pleased to say that it’s now available to search.<br><br>
+                    Your contribution is vital to help landlords pick the right tenant first-time.<br>
+                </p>
+                @endif
+
+                @if ($result === 3)
+                <p class="text-[#707070] text-[25px] leading-tight my-12" style="font-family: 'Raleway'; display: flex; align-items: center;">
+                    Sorry but your report doesn’t meet our conditions for publication.<br><br>
+                    We’re unable to publish your report at this time.<br>
+                </p>
+                @endif
 
                 <div class="mt-[80px]">
                     <button type="button" wire:click='backToAccount'
