@@ -50,16 +50,6 @@ class EnterTenant extends Component
         $this->validate($rules);
 
         if ($this->isReadyForSubmit()) {
-            DB::statement('ALTER TABLE reports ADD COLUMN anti_social_behaviour tinyint(1) AFTER damage_to_property');
-            DB::statement('ALTER TABLE reports ADD COLUMN terms_of_lease_broken tinyint(1) AFTER damage_to_property');
-            DB::statement('ALTER TABLE reports DROP COLUMN `description`');
-            DB::statement('ALTER TABLE reports DROP COLUMN age');
-            DB::statement('ALTER TABLE reports DROP COLUMN dependants');
-            DB::statement('ALTER TABLE reports DROP COLUMN maretal_status');
-            DB::statement('ALTER TABLE reports DROP COLUMN areas_of_property');
-            DB::statement('ALTER TABLE reports DROP COLUMN other1');
-            DB::statement('ALTER TABLE reports DROP COLUMN other2');
-
             $tenant = Tenant::firstOrCreate([
                 'name' => $this->tenantName,
                 'date_of_birth' => $this->dateOfBirth,
