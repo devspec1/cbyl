@@ -107,7 +107,7 @@ class EnterTenant extends Component
         if ($this->step === 1) {
             return [
                 'tenantName' => 'required',
-                'dateOfBirth' => 'required|date'
+                'dateOfBirth' => 'required|date',
                 'postcode' => 'required'
             ];
         }
