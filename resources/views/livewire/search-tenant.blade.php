@@ -52,6 +52,26 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="w-full flex flex-col md:flex-row justify-between mt-10">
+                    <div class="flex flex-col w-full md:w-1/3">
+                        <div class="flex flex-col mb-6">
+                            <label for="dateOfBirth"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Date of Birth</label>
+                            <input id="dateOfBirth"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                readonly value="{{ $this->date }}">
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label for="postcode"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Area of Property</label>
+                            <input id="postcode"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                readonly value="{{ $this->postcode }}">
+                        </div>
+                    </div>
+                </div>
+
+                <span class="w-full md:w-2/3 block m-auto border bg-gray-700 my-5"></span>
 
                 <div class="w-full flex flex-col md:flex-row justify-between mt-10">
                     <div class="flex flex-col w-full md:w-1/3">
@@ -148,109 +168,6 @@
                                     <label
                                         class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
                                         for="anti_social_behaviour_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="w-full md:w-2/3 block m-auto border bg-gray-700 my-5"></span>
-
-                <div class="w-full flex flex-col md:flex-row justify-between">
-                    <div class="flex flex-col w-full md:w-1/3">
-                        <div class="flex flex-col mb-6">
-                            <label for="no_boiler_for_a_period_of_time_yes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">No Boiler For A Period Of Time</label>
-                            <div class="flex space-x-4">
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->no_boiler_for_a_period_of_time === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="no_boiler_for_a_period_of_time" id="no_boiler_for_a_period_of_time_yes" value="{{ $selectedReport->no_boiler_for_a_period_of_time }}">
-                                    <label
-                                        class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="no_boiler_for_a_period_of_time_yes">Yes</label>
-                                </div>
-
-                                <div class="relative w-1/5">
-                                    <input  {{ $selectedReport->no_boiler_for_a_period_of_time !== 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="no" name="no_boiler_for_a_period_of_time" id="no_boiler_for_a_period_of_time_no">
-                                    <label
-                                        class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="no_boiler_for_a_period_of_time_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col mb-6">
-                            <label for="damp_yes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Damp (Extreme)</label>
-                            <div class="flex space-x-4">
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->damp === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="damp" id="damp_yes">
-                                    <label
-                                        class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="damp_yes">Yes</label>
-                                </div>
-
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->damp !== 1 ? 'checked' : '' }}  disabled class="sr-only peer" type="radio" value="no" name="damp" id="damp_no">
-                                    <label
-                                        class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="damp_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col w-full md:w-1/3">
-                        <div class="flex flex-col mb-6">
-                            <label for="bathroom_of_plumbing_issues_yes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bathroom of Plumbing Issues</label>
-                            <div class="flex space-x-4">
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->bathroom_of_plumbing_issues === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="bathroom_of_plumbing_issues" id="bathroom_of_plumbing_issues_yes">
-                                    <label
-                                        class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="bathroom_of_plumbing_issues_yes">Yes</label>
-                                </div>
-
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->bathroom_of_plumbing_issues !== 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="no" name="bathroom_of_plumbing_issues" id="bathroom_of_plumbing_issues_no">
-                                    <label
-                                        class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="bathroom_of_plumbing_issues_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col mb-6">
-                            <label for="kitchin_issues_yes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kitchen Issues</label>
-                            <div class="flex space-x-4">
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->kitchin_issues === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="kitchin_issues" id="kitchin_issues_yes">
-                                    <label
-                                        class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="kitchin_issues_yes">Yes</label>
-                                </div>
-
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->kitchin_issues !== 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="no" name="kitchin_issues" id="kitchin_issues_no">
-                                    <label
-                                        class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="kitchin_issues_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col w-full md:w-1/3">
-                        <div class="flex flex-col mb-6">
-                            <label for="behavior_recorded_as_good_yes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Behaviour Recorded As Good</label>
-                            <div class="flex space-x-4">
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->behavior_recorded_as_good === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="behavior_recorded_as_good" id="behavior_recorded_as_good_yes">
-                                    <label
-                                        class="flex justify-around w-full p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="behavior_recorded_as_good_yes">Yes</label>
-                                </div>
-
-                                <div class="relative w-1/5">
-                                    <input {{ $selectedReport->behavior_recorded_as_good !== 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="no" name="behavior_recorded_as_good" id="behavior_recorded_as_good_no">
-                                    <label
-                                        class="flex justify-around w-around p-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent"
-                                        for="behavior_recorded_as_good_no">No</label>
                                 </div>
                             </div>
                         </div>

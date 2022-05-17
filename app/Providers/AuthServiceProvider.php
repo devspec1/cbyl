@@ -43,7 +43,7 @@ class AuthServiceProvider extends ServiceProvider
             $searchCount = SearchLog::whereBetween(
                 'created_at', [$subscription->created_at, $subscription->ends_at ?? $subscription->created_at->addYear(1)->format('Y-m-d')]
             )
-            ->count(DB::raw('DISTINCT name, date_of_birth'));
+            ->count(DB::raw('DISTINCT name, date_of_birth, postcode'));
 
             if ($searchCount < 10) {
                 return true;

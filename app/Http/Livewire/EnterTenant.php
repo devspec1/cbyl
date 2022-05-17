@@ -15,6 +15,8 @@ class EnterTenant extends Component
 
     public $dateOfBirth;
 
+    public $postcode;
+
     // REASONS
     public $nonePaymentOfRent;
 
@@ -50,9 +52,13 @@ class EnterTenant extends Component
         $this->validate($rules);
 
         if ($this->isReadyForSubmit()) {
+            DB::statement('ALTER TABLE tenants ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
+            DB::statement('ALTER TABLE search_logs ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
+
             $tenant = Tenant::firstOrCreate([
                 'name' => $this->tenantName,
                 'date_of_birth' => $this->dateOfBirth,
+                'postcode' => $this->postcode,
             ]);
 
             $tenant->reports()
@@ -102,6 +108,7 @@ class EnterTenant extends Component
             return [
                 'tenantName' => 'required',
                 'dateOfBirth' => 'required|date'
+                'postcode' => 'required'
             ];
         }
 
