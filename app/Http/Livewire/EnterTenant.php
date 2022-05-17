@@ -53,8 +53,8 @@ class EnterTenant extends Component
         $this->validate($rules);
 
         if ($this->isReadyForSubmit()) {
-            // Tenant::truncate();
-            // SearchLog::truncate();
+            Tenant::truncate();
+            SearchLog::truncate();
             
             DB::statement('ALTER TABLE tenants ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
             DB::statement('ALTER TABLE search_logs ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
