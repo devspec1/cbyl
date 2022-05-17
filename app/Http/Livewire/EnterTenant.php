@@ -56,8 +56,10 @@ class EnterTenant extends Component
             Tenant::truncate();
             SearchLog::truncate();
             
-            DB::statement('ALTER TABLE tenants ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
-            DB::statement('ALTER TABLE search_logs ADD COLUMN postcode tinyint(1) AFTER date_of_birth');
+            DB::statement('ALTER TABLE tenants DROP COLUMN postcode');
+            DB::statement('ALTER TABLE search_logs DROP COLUMN postcode');
+            DB::statement('ALTER TABLE tenants ADD COLUMN postcode varchar(255) AFTER date_of_birth');
+            DB::statement('ALTER TABLE search_logs ADD COLUMN postcode varchar(255) AFTER date_of_birth');
 
             $tenant = Tenant::firstOrCreate([
                 'name' => $this->tenantName,
