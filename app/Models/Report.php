@@ -12,16 +12,22 @@ class Report extends Model
 
     /** @var string[] */
     protected $fillable = [
+        'description',
+        'age',
+        'dependants',
+        'maretal_status',
+        'areas_of_property',
         'none_payment_of_rent',
         'noice',
+        'drugs',
         'damage_to_property',
-        'terms_of_lease_broken',
-        'anti_social_behaviour',
+        'other1',
         'no_boiler_for_a_period_of_time',
         'damp',
+        'behavior_recorded_as_good',
         'bathroom_of_plumbing_issues',
         'kitchin_issues',
-        'behavior_recorded_as_good',
+        'other2',
         'added_by_user_id',
         'tenant_id',
     ];

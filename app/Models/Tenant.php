@@ -11,7 +11,7 @@ class Tenant extends Model
     use HasFactory;
 
     /** @var string[] */
-    protected $fillable = ['name', 'date_of_birth', 'postcode'];
+    protected $fillable = ['name', 'date_of_birth'];
 
     public function reports(): HasMany
     {
