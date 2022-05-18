@@ -13,6 +13,7 @@ class SearchLog extends Model
         'user_id',
         'name',
         'date_of_birth',
+        'postcode',
         'num_results',
     ];
 }
