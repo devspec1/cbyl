@@ -45,20 +45,20 @@
                 <span class="block bg-gray-500 w-4 h-14 mr-2 opacity-25"></span>
                 <span class="block bg-gray-500 w-4 h-14 ml-2 opacity-25"></span>
             </div>
-            <div class="text-[26px]">
+            <div class="text-[14px] mt-7 md:mt-0 md:text-[26px] text-center md:text-left">
                 I was tired of seeing tenants walk away from properties after paying a fortune to have them removed, only for them to go and do it all again.
                 <br />Check Before You Let gives us <span class="text-primary">peace of mind.</span>
             </div>
-            <div class="absolute bottom-0 right-10 flex md:right-40">
+            <div class="absolute -bottom-4 right-0 md:bottom-0 flex md:right-40">
                 <span class="block bg-gray-500 w-4 h-14 mr-2 opacity-25"></span>
                 <span class="block bg-gray-500 w-4 h-14 ml-2 opacity-25"></span>
             </div>
         </div>
-        <div class="w-full flex md:w-4/12 justify-center items-center p-8">
+        <div class="w-full flex md:w-4/12 justify-center items-center p-7 md:p-8 mt-5 md:mt-0">
             <img class="w-[101px] h-[102px]" src="{{ asset('joanne-knowles.png') }}" />
             <div class="flex flex-col text-center md:text-left pl-5">
-                <h4 class="font-heading text-[26px] pt-2 md:pt-0">Joanne Knowles</h4>
-                <p class="text-[14px] text-primary">Independent Landlord</p>
+                <h4 class="font-heading text-[20px] md:text-[26px] pt-2 md:pt-0">Joanne Knowles</h4>
+                <p class="text-[10px] md:text-[14px] text-primary">Independent Landlord</p>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-90"
         x-on:keydown.escape.window="show = false"
-        class="bg-gray-100 rounded-lg overflow-hidden transform m-auto sm:w-full md:w-3/6 min-w-max"
+        class="bg-gray-100 rounded-lg overflow-hidden transform m-auto sm:w-full md:w-3/6"
     >
         {{ $slot }}
     </div>

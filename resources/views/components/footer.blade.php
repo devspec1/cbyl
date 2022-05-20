@@ -1,5 +1,5 @@
-<footer class="container sticky top-[100vh]">
-    <div class="flex flex-col md:flex-row md:justify-between border-t-2 border-gray-500 py-10">
+<footer class="container sticky top-[100vh] bg-gray-100 sm:bg-white">
+    <div class="flex flex-col md:flex-row md:justify-between py-10 sm:border-t-2 sm:border-gray-500 ">
         <div class="w-full md:w-1/3 md:pr-6">
             <h1 class="font-bold text-2xl font-heading text-[30px]">Check <span class="text-primary">Before</span> You Let</h1>
             <p class="font-heading text-[16px]">Before it's <span class="text-secondary">too late!</span></p>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="m-auto flex flex-col-reverse md:flex-start md:flex-row md:justify-between text-gray-500 text-sm pb-1 items-center">
+    <div class="m-auto flex flex-col-reverse md:flex-start md:flex-row md:justify-between text-gray-500 text-sm pb-1 items-start md:items-center">
         <span class="mb-3">Copyright checkbeforeyoulet 2022</span>
         <span class="mb-3"><a href="{{ route('privacy-policy') }}" class="hover:text-primary">Privacy</a>/<a href="{{ route('terms') }}" class="hover:text-primary">Terms and Conditions</a> </span>
     </div>

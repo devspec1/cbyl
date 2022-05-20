@@ -13,30 +13,38 @@ class EnterTenant extends Component
 
     public $dateOfBirth;
 
-    public $postcode;
+    public $description;
+
+    public $age;
+
+    public $dependants;
+
+    public $maretalStatus;
+
+    public $areasOfProperty;
 
     // REASONS
     public $nonePaymentOfRent;
 
     public $noice;
 
+    public $drugs;
+
     public $damageToProperty;
 
-    public $termsOfLeaseBroken;
-
-    public $antiSocialBehaviour;
+    public $other1;
 
     public $noBoilerForAPeriodOfTime;
 
     public $damp;
 
+    public $behaviorRecordedAsGood;
+
     public $bathroomOfPlumbingIssues;
 
     public $kitchinIssues;
 
-    public $behaviorRecordedAsGood;
-
-    public $result = 0;
+    public $other2;
 
     public function render()
     {
@@ -53,35 +61,28 @@ class EnterTenant extends Component
             $tenant = Tenant::firstOrCreate([
                 'name' => $this->tenantName,
                 'date_of_birth' => $this->dateOfBirth,
-                'postcode' => $this->postcode,
             ]);
 
             $tenant->reports()
                 ->create([
+                    'description' => $this->description,
+                    'age' => $this->age,
+                    'dependants' => $this->dependants,
+                    'maretal_status' => $this->maretalStatus,
+                    'areas_of_property' => $this->areasOfProperty,
                     'none_payment_of_rent' => $this->parseToBoolean($this->nonePaymentOfRent),
                     'noice' => $this->parseToBoolean($this->noice),
+                    'drugs' => $this->parseToBoolean($this->drugs),
                     'damage_to_property' => $this->parseToBoolean($this->damageToProperty),
-                    'terms_of_lease_broken' => $this->parseToBoolean($this->termsOfLeaseBroken),
-                    'anti_social_behaviour' => $this->parseToBoolean($this->antiSocialBehaviour),
+                    'other1' => $this->other1,
                     'no_boiler_for_a_period_of_time' => $this->parseToBoolean($this->noBoilerForAPeriodOfTime),
                     'damp' => $this->parseToBoolean($this->damp),
+                    'behavior_recorded_as_good' => $this->parseToBoolean($this->behaviorRecordedAsGood),
                     'bathroom_of_plumbing_issues' => $this->parseToBoolean($this->bathroomOfPlumbingIssues),
                     'kitchin_issues' => $this->parseToBoolean($this->kitchinIssues),
-                    'behavior_recorded_as_good' => $this->parseToBoolean($this->behaviorRecordedAsGood),
+                    'other2' => $this->other2,
                     'added_by_user_id' => auth()->user()->id
                 ]);
-
-            if($this->parseToBoolean($this->nonePaymentOfRent) == 0 && $this->parseToBoolean($this->noice) == 0 && $this->parseToBoolean($this->damageToProperty) == 0 && $this->parseToBoolean($this->termsOfLeaseBroken) == 0 && $this->parseToBoolean($this->antiSocialBehaviour) == 0){
-                $this->result = 1;
-            }
-            else{
-                if($this->parseToBoolean($this->noBoilerForAPeriodOfTime) == 0 && $this->parseToBoolean($this->damp) == 0 && $this->parseToBoolean($this->bathroomOfPlumbingIssues) == 0 && $this->parseToBoolean($this->kitchinIssues) == 0 && $this->parseToBoolean($this->behaviorRecordedAsGood) == 1){
-                    $this->result = 2;
-                }
-                else{
-                    $this->result = 3;
-                }
-            }
         }
 
         $this->goToNextStep();
@@ -102,18 +103,27 @@ class EnterTenant extends Component
         if ($this->step === 1) {
             return [
                 'tenantName' => 'required',
-                'dateOfBirth' => 'required|date',
-                'postcode' => 'required'
+                'dateOfBirth' => 'required|date'
             ];
         }
 
         if ($this->step === 2) {
             return [
+                'description' => 'required',
+                'age' => 'required|numeric',
+                'dependants' => 'required|numeric',
+                'maretalStatus' => 'required|numeric',
+                'areasOfProperty' => 'required',
+            ];
+        }
+
+        if ($this->step === 3) {
+            return [
                 'nonePaymentOfRent' => 'required',
                 'noice' => 'required',
+                'drugs' => 'required',
                 'damageToProperty' => 'required',
-                'termsOfLeaseBroken' => 'required',
-                'antiSocialBehaviour' => 'required',
+                'other1' => 'string',
             ];
         }
 
@@ -121,9 +131,10 @@ class EnterTenant extends Component
         return [
             'noBoilerForAPeriodOfTime' => 'required',
             'damp' => 'required',
+            'behaviorRecordedAsGood' => 'required',
             'bathroomOfPlumbingIssues' => 'required',
             'kitchinIssues' => 'required',
-            'behaviorRecordedAsGood' => 'required',
+            'other2' => 'string',
         ];
     }
 
@@ -134,6 +145,6 @@ class EnterTenant extends Component
 
     private function isReadyForSubmit()
     {
-        return $this->step > 2;
+        return $this->step > 3;
     }
 }
