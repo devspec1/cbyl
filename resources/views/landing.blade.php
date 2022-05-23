@@ -14,8 +14,8 @@
                 </p>
 
                 <div class="relative w-full hidden md:flex md:flex-col justify-end px-10 md:p-0 md:pl-0 lg:max-w-[447px]">
-                    <input type="email" class="h-14 w-full border-none pl-5 md:pr-20 rounded-full z-0 focus:outline-0" placeholder="Enter your email" style="box-shadow: 5px 0px 15px 5px rgb(0 0 0 / 15%);">
-                    <button x-data="{}" @click="window.livewire.emitTo('create-account-modal', 'show')" class="absolute top-0 right-10 md:right-0 flex justify-center items-center h-14 w-28 md:w-32 text-white rounded-full bg-secondary hover:bg-opacity-90">
+                    <input type="email" id="signupemail" class="h-14 w-full border-none pl-5 md:pr-20 rounded-full z-0 focus:outline-0" placeholder="Enter your email" style="box-shadow: 5px 0px 15px 5px rgb(0 0 0 / 15%);">
+                    <button x-data="{}" @click="window.livewire.emitTo('create-account-modal', 'showWithInput', document.getElementById('signupemail').value)" class="absolute top-0 right-10 md:right-0 flex justify-center items-center h-14 w-28 md:w-32 text-white rounded-full bg-secondary hover:bg-opacity-90">
                         Sign Up
                         <img class="hidden md:block md:ml-2" src="{{ asset('key_icon.png') }}" />
                     </button>
@@ -133,7 +133,7 @@
                         "If only I’d known about Check Before You Let before spending so much time and money evicting a tenant. A credit check only tells you so much, the best tenant reference in my view is a previous landlord."
                     </p>
                     <div class="text-left pt-10 pb-3">
-                        <h4 class="text-primary font-semibold text-2xl">Ed Fairclough</h4>
+                        <h4 class="text-primary font-semibold text-2xl">Andrew Odudu</h4>
                         <p class="text-[14px]">Independent Landlord</p>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                         "A tenant background check is the best way to protect against serial bad behaviour. Check Before You Let is helping us put a stop to it. Every landlord needs this service!"
                     </p>
                     <div class="text-left pt-10 pb-3">
-                        <h4 class="text-primary font-semibold text-2xl">Martin Turner</h4>
+                        <h4 class="text-primary font-semibold text-2xl">Edward Fairclough</h4>
                         <p class="text-[14px]">Independent Landlord</p>
                     </div>
                 </div>

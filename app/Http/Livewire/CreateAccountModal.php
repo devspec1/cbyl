@@ -266,4 +266,10 @@ class CreateAccountModal extends Modal
         $this->resetAll();
         $this->show = false;
     }
+
+    public function showWithInput($params)
+    {
+        $this->email = $params;
+        $this->show = true;
+    }
 }

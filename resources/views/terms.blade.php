@@ -1,7 +1,7 @@
 <x-app-layout>
-    <h1 class="font-bold text-[33px] md:text-[68px] mt-20 mb-5 font-heading ">Terms</h1>
-    <div class="px-5 py-5 md:px-2 md:py-1 text-[7px] md:text-[20px]" style="font-family: 'Raleway'">
-        <p>Check Before You Let Limited&nbsp;</p>
+    <h1 class="font-bold text-[33px] md:text-[68px] mt-6 md:mt-20 mb-5 font-heading ">Terms</h1>
+    <div class="py-5 md:px-2 md:py-1 text-[7px] md:text-[20px] mb-5 md:mb-20" style="font-family: 'Raleway'">
+        <p class="font-semibold">Check Before You Let Limited&nbsp;</p>
         <p><br></p>
         <p>Terms and Conditions&nbsp;</p>
         <p><br></p>
@@ -9,7 +9,7 @@
         <p><br></p>
         <p>BY TICKING THE BOX NEXT TO &ldquo;I AGREE TO THE TERMS AND CONDITIONS&rdquo; ON CHECK BEFORE YOU LET&rsquo;S WEBSITE PAYMENT PAGE, YOU (THE USER) AGREE TO BE BOUND BE THE TERMS AND CONDITIONS SET OUT HEREIN.</p>
         <p><br></p>
-        <p>BACKGROUND</p>
+        <p class="font-semibold">BACKGROUND</p>
         <p><br></p>
         <p>Check Before You Let has developed a website which it makes available to subscribers via the internet for individuals within the letting and rental market for the purpose of sharing information about certain tenants.</p>
         <p>The User wishes to use Check Before You Let&apos;s website.</p>

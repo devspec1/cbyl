@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1 class="font-bold text-[33px] md:text-[68px] mt-20 mb-5 font-heading">Privacy policy</h1>
-    <div class="px-5 py-5 md:px-2 md:py-1 text-[7px] md:text-[20px]" style="font-family: 'Segoe UI'">
+    <div class="px-5 py-5 md:px-2 md:py-1 text-[7px] md:text-[20px]" style="font-family: 'Raleway'">
         <p>Check Before You Let Limited&nbsp;</p>
         <p>Website Privacy Notice</p>
         <p><br></p>
@@ -155,11 +155,11 @@
         <p>This notice may be changed from time to time in response to legal, technical or business developments. We will take appropriate measures to inform you when we update our privacy notice. We will obtain your consent to any material privacy notice changes if and where this is required by applicable Data Protection Laws.</p>
         <p>Contact us&nbsp;</p>
         <p>If you would like more information about the way we manage personal information that we hold about you please contact us at:</p>
-        <p>Email address: [insert full email address].</p>
-        <p>Postal address: [insert full postal address].</p>
-        <p>Telephone number: [insert telephone number with area code].</p>
+        <p>Email address: info@checkbeforeyoulet.co.uk</p>
+        <p>Postal address: Unit 4 Fernhill Street, Bury, England, BL9 5BG.</p>
+        <p>Telephone number: 0161 552 7890.</p>
         <p><br></p>
-        <p>This version was last updated in [insert day month year].&nbsp;</p>
+        <p>This version was last updated in April 2022.&nbsp;</p>
         <p><br></p>
     </div>
 </x-app-layout>

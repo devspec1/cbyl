@@ -14,7 +14,8 @@ class Modal extends Component
 
     public $listeners = [
         'show' => 'show',
-        'close' => 'close'
+        'close' => 'close',
+        'showWithInput' => 'showWithInput'
     ];
 
     public function show()
