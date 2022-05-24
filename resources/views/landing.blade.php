@@ -1,4 +1,5 @@
 <x-app-layout>
+    <link href="{{ asset('css/landing.css') }}" rel="stylesheet">
     <div class="md:flex-col md:justify-between w-full h-full py-6 md:py-32">
         <div class="w-full md:w-full flex flex-col md:flex-row justify-between">
             <div class="flex flex-col md:flex-col">
@@ -161,4 +162,45 @@
             </div>
         </div>
     </div>
+    <div class="cookie-block">
+        <div class="text-block">
+            <p class="cookie-title">COOKIES NOTICE</p>
+            <p>Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and allows us to improve our site. A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your device if you agree. Cookies contain information that is transferred to your device.</p>
+        </div>
+        <div class="action-block">
+            <button class="text-primary border-2 border-primary bg-white flex items-center py-2 px-4 mr-3" onclick="openAboutModal(event)">About</button>
+            <button class="text-white border-2 border-primary bg-primary flex items-center py-2 px-4" onclick="allowCookies()">Allow all cookies</button>
+        </div>
+    </div>
+    <div class="cookie-about-modal" onclick="preventClose(event)">
+        <div class="about-block">
+            <p class="about-title">CHECK BEFORE YOU LET LIMITED</p>
+            <p class="cookie-banner">Use of Cookies</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="font-extrabold">Strictly necessary cookies.</p>
+                    <p>These are cookies that are required for the operation of our website. They include, for example, cookies that enable you to log into secure areas of our website, use a shopping cart or make use of e-billing services.</p><br>
+                    <p class="font-extrabold">Functionality cookies.</p>
+                    <p>These are used to recognise you when you return to our website. This enables us to personalise our content for you, greet you by name and remember your preferences, for example, your choice of language or region.</p><br>
+                    <p class="font-extrabold">Analytical or performance cookies.</p>
+                    <p>These allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users find what they are looking for easily.</p><br>
+                    <p class="font-extrabold">Targeting cookies.</p>
+                    <p>These cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.</p><br>
+                    <p class="font-extrabold">Terminology to help you understand cookies<br>First and Third-party cookies</p>
+                    <p>First-party cookies are cookies set by our website, i.e., the website displayed in your URL window. </p>
+                </div>
+                <div class="col-md-6">
+                    <p>Third-party cookies are cookies that are set by a domain other than our website. We may use third parties’ cookies and these third parties may include, for example, advertising networks and providers of external services like web traffic analysis services. Please see our cookies table for more information.</p><br>
+                    <p class="font-extrabold">Session and Persistent cookies</p>
+                    <p>Session cookies are cookies which expire once you close your web browser. Persistent cookies are cookies which stay on your device for a set period of time or until you delete them. Please see our cookies table for more information.</p><br>
+                    <p class="font-extrabold">Cookies control and disabling cookies</p>
+                    <p>You can refuse the use of cookies by changing the settings on your browser or by clicking on the cookies consent mechanism. However, if you block certain cookies, such as strictly necessary cookies for the functioning of our website, you may not be able to access all or parts of our website.<br>You can use your browser to delete cookies that have already been stored. However, the steps and measures required vary depending on the browser you use. If you have any questions, please use the Help function or consult the documentation for your browser or contact its creator for support.</p><br>
+                    <p class="font-extrabold">To find out more about cookies,<br>visit <a href='https://www.aboutcookies.org' target='aboutcookies'>www.aboutcookies.org</a> or <a href='https://www.allaboutcookies.org' target='allaboutcookies'>www.allaboutcookies.org.</a></p><br>
+                    <p class="font-extrabold">Contact</p>
+                    <p>If you have any queries concerning our use of your personal information, please email insert email.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('js/landing.js') }}"></script>
 </x-app-layout>
