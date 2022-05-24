@@ -108,7 +108,7 @@
         </div>
         <div class="w-full pl-0 md:pl-5 md:w-3/6 mb-20 md:mb-0 text-center md:text-left">
             @svg('one-small-yearly-subscription.svg', 'md:block md:w-[275px] md:h-[277px] m-auto md:mt-20')
-            <h3 class="font-bold text-[21px] md:text-[26px] mt-[-60px] md:mt[0px]">One small yearly subscription</h3>
+            <h3 class="font-bold text-[21px] md:text-[26px] mt-5 md:mt-20">One small yearly subscription</h3>
             <p class="py-4 text-[13px] sm:text-[18px] md:text-left md:py-12 md:pb-[71px]">
                 For less than the cost of a credit search, you can have access to our database where you can perform as many searches as you like.
             </p>
