@@ -1,7 +1,7 @@
 <div>
 
     @if ($step === 1)
-        <div class="flex grow justify-between w-full h-full px-10 mb-40 mt-40">
+        <div class="flex grow justify-between w-full h-full px-20 mb-40 mt-40">
             <div class="w-full md:w-4/12 lg:w-5/12 flex flex-col justify-center">
                 <h1 class="text-black font-bold text-xl leading-tight mb-4 md:text-[68px]">
                     Search For A tenant
@@ -46,7 +46,7 @@
     @endif
 
     @if ($step === 2)
-        <form class="md:px-10">
+        <form class="md:px-20">
             <h1 class="text-black font-bold text-2xl md:text-6xl leading-tight my-10 md:my-20">Previous Reports On {{ $this->tenantName }}</h1>
             <div>
                 <label class="md:font-semibold md:my-2 block">Number of reports: {{ count($reports) }}</label>
