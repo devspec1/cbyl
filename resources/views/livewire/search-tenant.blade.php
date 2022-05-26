@@ -93,7 +93,7 @@
                                 <div class="relative w-2/5">
                                     <input {{ $selectedReport->none_payment_of_rent === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="none_of_payment" id="none_of_payment_yes">
                                     <label
-                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent py-1 px-3"
+                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-rd peer-checked:text-white peer-checked:border-transparent py-1 px-3"
                                         for="none_of_payment_yes">Yes</label>
                                 </div>
 
@@ -111,7 +111,7 @@
                                 <div class="relative w-2/5">
                                     <input {{ $selectedReport->noice === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="noice" id="noice_yes">
                                     <label
-                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent py-1 px-3"
+                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-rd peer-checked:text-white peer-checked:border-transparent py-1 px-3"
                                         for="noice_yes">Yes</label>
                                 </div>
 
@@ -132,7 +132,7 @@
                                 <div class="relative w-2/5">
                                     <input {{ $selectedReport->damage_to_property === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="damage_of_property" id="damage_of_property_yes">
                                     <label
-                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent py-1 px-3"
+                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-rd peer-checked:text-white peer-checked:border-transparent py-1 px-3"
                                         for="damage_of_property_yes">Yes</label>
                                 </div>
 
@@ -150,7 +150,7 @@
                                 <div class="relative w-2/5">
                                     <input {{ $selectedReport->terms_of_lease_broken === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="terms_of_lease_broken" id="terms_of_lease_broken_yes">
                                     <label
-                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent py-1 px-3"
+                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-rd peer-checked:text-white peer-checked:border-transparent py-1 px-3"
                                         for="terms_of_lease_broken_yes">Yes</label>
                                 </div>
 
@@ -171,7 +171,7 @@
                                 <div class="relative w-2/5">
                                     <input {{ $selectedReport->anti_social_behaviour === 1 ? 'checked' : '' }} disabled class="sr-only peer" type="radio" value="yes" name="anti_social_behaviour" id="anti_social_behaviour_yes">
                                     <label
-                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-st peer-checked:text-white peer-checked:border-transparent py-1 px-3"
+                                        class="flex justify-around w-full bg-white border border-gray-300 rounded-lg focus:outline-none hover:bg-gray-50 peer-checked:bg-rd peer-checked:text-white peer-checked:border-transparent py-1 px-3"
                                         for="anti_social_behaviour_yes">Yes</label>
                                 </div>
 
