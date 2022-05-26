@@ -42,10 +42,10 @@ class SearchTenant extends Component
         ]);
 
         $user = auth()->user();
-        // if ($user->cannot('search-tenant')) {
-        //     $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
-        //     return;
-        // }
+        if ($user->cannot('search-tenant')) {
+            $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
+            return;
+        }
 
         $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->where('postcode', $this->postcode)->latest()->first();
 
