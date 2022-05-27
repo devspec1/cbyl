@@ -7,7 +7,6 @@ use App\Models\SearchLog;
 use App\Models\Tenant;
 use Carbon\Carbon;
 use Livewire\Component;
-use DB;
 
 class SearchTenant extends Component
 {
@@ -18,6 +17,8 @@ class SearchTenant extends Component
     public $tenantName = '';
 
     public $date;
+
+    public $postcode;
 
     public $reports = [];
 
@@ -60,6 +61,7 @@ class SearchTenant extends Component
             return;
         }
 
+        $this->postcode = $tenant->postcode;
         $this->reports = $tenant->reports;
         $this->step += 1;
         $this->selectedReport = $tenant->reports->first();
