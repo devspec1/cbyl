@@ -35,18 +35,16 @@ class SearchTenant extends Component
 
     public function search()
     {
-        DB::statement('ALTER TABLE search_logs DROP COLUMN postcode;');
-
         $this->validate([
             'tenantName' => 'required',
             'date' => 'required|date',
         ]);
 
         $user = auth()->user();
-        // if ($user->cannot('search-tenant')) {
-        //     $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
-        //     return;
-        // }
+        if ($user->cannot('search-tenant')) {
+            $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
+            return;
+        }
 
         $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->latest()->first();
 
