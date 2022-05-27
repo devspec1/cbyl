@@ -35,7 +35,7 @@ class SearchTenant extends Component
 
     public function search()
     {
-        // DB::statement('ALTER TABLE search_logs DROP COLUMN postcode;');
+        DB::statement('ALTER TABLE search_logs DROP COLUMN postcode;');
 
         $this->validate([
             'tenantName' => 'required',
