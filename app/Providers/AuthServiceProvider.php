@@ -30,6 +30,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('search-tenant', function (User $user) {
+		if ($user->onTrial()) {
+                return true;
+            }
             $plans = Plan::all()->pluck('slug', 'stripe_plan');
             $subscription = $user->getActiveSubscription();
             if (!($activePlan = $plans->get($subscription->stripe_price))) {
@@ -41,9 +44,9 @@ class AuthServiceProvider extends ServiceProvider
             }
 
             $searchCount = SearchLog::whereBetween(
-		    'created_at', [$subscription->created_at, $subscription->ends_at ?? $subscription->created_at->addYear(1)->format('Y-m-d')],
-		    
-            )->where(['user_id' => $user->id])
+                'created_at', [$subscription->created_at, $subscription->ends_at ?? $subscription->created_at->addYear(1)->format('Y-m-d')]
+            )
+            ->where(['user_id' => $user->id])
             ->count(DB::raw('DISTINCT name, date_of_birth, postcode'));
 
             if ($searchCount < 10) {
