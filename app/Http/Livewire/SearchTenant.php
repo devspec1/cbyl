@@ -7,6 +7,7 @@ use App\Models\SearchLog;
 use App\Models\Tenant;
 use Carbon\Carbon;
 use Livewire\Component;
+use DB;
 
 class SearchTenant extends Component
 {
@@ -16,9 +17,7 @@ class SearchTenant extends Component
 
     public $tenantName = '';
 
-    public $date; 
-
-    public $postcode;
+    public $date;
 
     public $reports = [];
 
@@ -36,24 +35,25 @@ class SearchTenant extends Component
 
     public function search()
     {
+        // DB::statement('ALTER TABLE search_logs DROP COLUMN postcode;');
+
         $this->validate([
             'tenantName' => 'required',
             'date' => 'required|date',
         ]);
 
         $user = auth()->user();
-        if ($user->cannot('search-tenant')) {
-            $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
-            return;
-        }
+        // if ($user->cannot('search-tenant')) {
+        //     $this->dispatchBrowserEvent('alert', ['type' => 'error',  'message' => 'Your search credits have been elapsed.']);
+        //     return;
+        // }
 
-        $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->where('postcode', $this->postcode)->latest()->first();
+        $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->latest()->first();
 
         SearchLog::create([
             'user_id' => $user->id,
             'name' => $this->tenantName,
             'date_of_birth' => Carbon::parse($this->date)->format('Y-m-d'),
-            'postcode' => $this->postcode,
             'num_results' => $tenant ? $tenant->reports->count() : 0,
         ]);
 
@@ -72,7 +72,6 @@ class SearchTenant extends Component
         $this->step = 1;
         $this->tenantName = '';
         $this->date = '';
-        $this->postcode = '';
         $this->reports = [];
         $this->selectedReport = null;
     }
