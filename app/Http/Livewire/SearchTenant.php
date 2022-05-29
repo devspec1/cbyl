@@ -16,7 +16,7 @@ class SearchTenant extends Component
 
     public $tenantName = '';
 
-    public $date; 
+    public $date;
 
     public $postcode;
 
@@ -47,13 +47,12 @@ class SearchTenant extends Component
             return;
         }
 
-        $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->where('postcode', $this->postcode)->latest()->first();
+        $tenant = Tenant::where('name', $this->tenantName)->where('date_of_birth', Carbon::parse($this->date)->format('Y-m-d'))->latest()->first();
 
         SearchLog::create([
             'user_id' => $user->id,
             'name' => $this->tenantName,
             'date_of_birth' => Carbon::parse($this->date)->format('Y-m-d'),
-            'postcode' => $this->postcode,
             'num_results' => $tenant ? $tenant->reports->count() : 0,
         ]);
 
@@ -62,6 +61,7 @@ class SearchTenant extends Component
             return;
         }
 
+        $this->postcode = $tenant->postcode;
         $this->reports = $tenant->reports;
         $this->step += 1;
         $this->selectedReport = $tenant->reports->first();

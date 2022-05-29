@@ -47,7 +47,7 @@ class AuthServiceProvider extends ServiceProvider
                 'created_at', [$subscription->created_at, $subscription->ends_at ?? $subscription->created_at->addYear(1)->format('Y-m-d')]
             )
             ->where(['user_id' => $user->id])
-            ->count(DB::raw('DISTINCT name, date_of_birth, postcode'));
+            ->count(DB::raw('DISTINCT name, date_of_birth'));
 
             if ($searchCount < 10) {
                 return true;

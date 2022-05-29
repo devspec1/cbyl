@@ -103,6 +103,7 @@ class EnterTenant extends Component
             return [
                 'tenantName' => 'required',
                 'dateOfBirth' => 'required|date',
+                'postcode' => 'required',
             ];
         }
 
