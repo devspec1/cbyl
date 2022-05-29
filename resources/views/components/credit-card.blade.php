@@ -1,5 +1,5 @@
-<div class="flex flex-col md:flex-row items-center p-6 bg-white m-4 rounded-md shadow">
-    <div class="w-full md:w-2/3">
+<div class="flex flex-col lg:flex-row items-center p-6 bg-white m-4 rounded-md shadow">
+    <div class="w-full lg:w-2/3">
         <form wire:ignore class="flex flex-col p-1 md:p-6">
             <div class="w-full md:w-3/6 flex flex-col">
                 <div class="relative z-0 mb-6 group">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 
-                <div class="flex flex-row w-3/6 justify-between">
+                <div class="flex flex-row w-full md:w-3/6 justify-between">
                     <div class="relative z-0 mb-6 w-2/6 md:w-5/12  group md:ml-2">
                         <label for="expiry" class="block mb-2 text-sm font-bold text-gray-900">Expiry Date</label>
                         <div class="cc-exp block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary h-9">
@@ -37,7 +37,7 @@
             </div>
         </form>
     </div>
-    <div class="relative z-0 mb-6 w-full md:w-1/3 group">
+    <div class="relative z-0 mb-6 w-full lg:w-1/3 group">
         <h2 class="font-bold text-left md:text-right">Total: <span class="text-xl">£{{ $this->plan_price }}</span></h2>
         <p class="text-xs text-gray-400 text-left md:text-right">Rebilled 12 months from now</p>
     </div>

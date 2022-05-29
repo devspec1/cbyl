@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('search-tenant', function (User $user) {
-		if ($user->onTrial()) {
+            if ($user->onTrial()) {
                 return true;
             }
             $plans = Plan::all()->pluck('slug', 'stripe_plan');
@@ -47,7 +47,7 @@ class AuthServiceProvider extends ServiceProvider
                 'created_at', [$subscription->created_at, $subscription->ends_at ?? $subscription->created_at->addYear(1)->format('Y-m-d')]
             )
             ->where(['user_id' => $user->id])
-            ->count(DB::raw('DISTINCT name, date_of_birth'));
+            ->count(DB::raw('DISTINCT name, date_of_birth, postcode'));
 
             if ($searchCount < 10) {
                 return true;

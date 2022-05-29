@@ -55,7 +55,7 @@ module.exports = {
             'secondary': '#2F5B8B',
             'st': '#29C404',
             'et-s': '#476C9B',
-		'rd': '#EC1818',
+            'rd': '#EC1818',
         },
     },
 
